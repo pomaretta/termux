@@ -88,4 +88,4 @@ Project Link: [https://github.com/pomaretta/termux](https://github.com/pomaretta
 [issues-shield]: https://img.shields.io/github/issues/pomaretta/termux.svg?style=for-the-badge
 [issues-url]: https://github.com/pomaretta/termux/issues
 [license-shield]: https://img.shields.io/github/license/pomaretta/termux.svg?style=for-the-badge
-[license-url]: https://github.com/pomaretta/termux/blob/master/LICENSE.txt
+[license-url]: https://github.com/pomaretta/termux/blob/master/LICENSE
