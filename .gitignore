@@ -1,0 +1,8 @@
+# OS
+.DS_Store
+
+# IntelliJ
+out
+.idea
+manifest
+termux.iml
