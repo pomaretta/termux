@@ -1,9 +1,7 @@
-package Components.Menu;
-
 /*
 
-    Project     Programming21
-    Package     Application.Services.Components.Menu
+    Project     Termux UX
+    Package     java.com.pomaretta.termux.Menu
     
     Version     1.0      
     Author      Carlos Pomares
@@ -13,6 +11,10 @@ package Components.Menu;
     
 */
 
+package java.com.pomaretta.termux.Menu;
+
+import java.com.pomaretta.termux.Util.Encapsulate;
+import java.com.pomaretta.termux.Util.StringGenerator;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 
 public class OptionMenu extends OptionsMenu {
 
-    private static int TITLE_LENGHT = 35;
+    private static int TITLE_LENGTH = 35;
     private static int SPACING = 2;
 
     protected String format;
@@ -36,22 +38,17 @@ public class OptionMenu extends OptionsMenu {
     }
 
     public OptionMenu(String[] o, String e, String t, String f, int n, boolean a) {
-        super(o, e);
-        setTitleAndFormat(t,f);
+        this(o,e,t,f);
         this.number = n;
         this.activateNumbers = a;
     }
 
     public OptionMenu(ArrayList<String> o, String e, String t, String f) {
-        super(o, e);
-        setTitleAndFormat(t,f);
+        this(o.toArray(new String[0]),e,t,f);
     }
 
     public OptionMenu(ArrayList<String> o, String e, String t, String f, int n, boolean a) {
-        super(o, e);
-        setTitleAndFormat(t,f);
-        this.number = n;
-        this.activateNumbers = a;
+        this(o.toArray(new String[0]),e,t,f,n,a);
     }
 
     private void setTitle(String t){
@@ -68,11 +65,11 @@ public class OptionMenu extends OptionsMenu {
     }
 
     private String generateTitle(){
-        return Encapsulate.inlineEncapsulate(this.title,TITLE_LENGHT,SPACING);
+        return Encapsulate.inlineEncapsulate(this.title, TITLE_LENGTH,SPACING);
     }
 
     private String generateBottom(){
-        return StringGenerator.generateStringByChar("-",TITLE_LENGHT);
+        return StringGenerator.generateStringByChar("-", TITLE_LENGTH);
     }
 
     private void showOptions(){
@@ -87,12 +84,12 @@ public class OptionMenu extends OptionsMenu {
         }
     }
 
-    public static void setTitleLenght(int l){
-        OptionMenu.TITLE_LENGHT = l;
+    public static void setTitleLength(int l){
+        TITLE_LENGTH = l;
     }
 
     public static void setSpacing(int s) {
-        OptionMenu.SPACING = s;
+        SPACING = s;
     }
 
     @Override

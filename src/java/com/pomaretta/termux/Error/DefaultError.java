@@ -1,9 +1,7 @@
-package Components.Error;
-
 /*
 
-    Project     Programming21
-    Package     Application.Services.Components.Error
+    Project     Termux UX
+    Package     java.com.pomaretta.termux.Error
     
     Version     1.0      
     Author      Carlos Pomares
@@ -13,6 +11,8 @@ package Components.Error;
     
 */
 
+package java.com.pomaretta.termux.Error;
+
 import java.util.ArrayList;
 
 /**
@@ -21,8 +21,12 @@ import java.util.ArrayList;
 
 public abstract class DefaultError implements Error {
 
-    private ArrayList<String> errors;
+    private final ArrayList<String> errors;
 
+    /**
+     * Implements the Error Interface and creates a new ArrayList
+     * that will contain the exception messages logged.
+     */
     public DefaultError() {
         this.errors = new ArrayList<>();
     }

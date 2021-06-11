@@ -1,9 +1,7 @@
-package Components.Menu;
-
 /*
 
-    Project     Programming21
-    Package     Utilitats    
+    Project     Termux UX
+    Package     java.com.pomaretta.termux.Util
     
     Version     1.0      
     Author      Carlos Pomares
@@ -13,12 +11,14 @@ package Components.Menu;
     
 */
 
+package java.com.pomaretta.termux.Util;
+
 /**
  * @author Carlos Pomares
  */
 
-
 public class Encapsulate {
+
     /**
      *
      * Permite "encapsular", mostrar por pantalla la cadena de texto pasada
@@ -31,10 +31,12 @@ public class Encapsulate {
         int lengthOfString = toEncapsulate.length();
         encapsulate(toEncapsulate,"-",escapeCharacter,lengthOfString);
     }
+
     public static void encapsulateString(String toEncapsulate, String escapeCharacter, String spaceCharacter){
         int lengthOfString = toEncapsulate.length();
         encapsulate(toEncapsulate,spaceCharacter,escapeCharacter,lengthOfString);
     }
+
     public static String inlineEncapsulate(String s, int lenght, int spacing){
         double firstStage = Math.ceil(((double)(lenght - s.length()) / 2)) - Math.ceil((double)spacing / 2);
         double secondStage = Math.floor(((double)(lenght - s.length()) / 2)) - Math.floor((double)spacing / 2);
@@ -46,6 +48,7 @@ public class Encapsulate {
                 + StringGenerator.generateStringByChar(" ",secondSpacing)
                 + StringGenerator.generateStringByChar("-",secondStage);
     }
+
     private static void encapsulate(String s, String caracters, String escape, int lengthOfString){
 
         /*
@@ -95,4 +98,5 @@ public class Encapsulate {
             }
         }
     }
+
 }
