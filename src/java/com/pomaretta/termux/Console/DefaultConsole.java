@@ -11,9 +11,9 @@
     
 */
 
-package java.com.pomaretta.termux.Console;
+package com.pomaretta.termux.Console;
 
-import java.com.pomaretta.termux.Error.ErrorLog;
+import com.pomaretta.termux.Error.ErrorLog;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

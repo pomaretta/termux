@@ -11,7 +11,7 @@
     
 */
 
-package java.com.pomaretta.termux.Util;
+package com.pomaretta.termux.Util;
 
 /**
  * @author Carlos Pomares

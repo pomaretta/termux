@@ -11,7 +11,7 @@
     
 */
 
-package java.com.pomaretta.termux.Command;
+package com.pomaretta.termux.Command;
 
 /**
  * @author Carlos Pomares
@@ -48,5 +48,15 @@ public abstract class DefaultCommandParser {
     public static int parseCommand(String command, DefaultCommandParser parser) throws Exception {
         return parser.parseBlock(command);
     }
+
+    /**
+     *
+     * Allows to execute commands passing the parseBlock Middleware.
+     *
+     * @param command the input command.
+     * @return an input default 0, for exit the menus return -1.
+     * @throws Exception for something inside the callback.
+     */
+    protected abstract int callBack(String command) throws Exception;
 
 }

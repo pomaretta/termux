@@ -9,9 +9,9 @@
 
 */
 
-package java.com.pomaretta.termux.Error;
+package com.pomaretta.termux.Error;
 
-import java.com.pomaretta.termux.Menu.OptionMenu;
+import com.pomaretta.termux.Menu.OptionMenu;
 
 /**
  * @author Carlos Pomares

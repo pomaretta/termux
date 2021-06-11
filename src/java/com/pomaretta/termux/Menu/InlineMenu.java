@@ -11,7 +11,7 @@
     
 */
 
-package java.com.pomaretta.termux.Menu;
+package com.pomaretta.termux.Menu;
 
 import java.util.ArrayList;
 

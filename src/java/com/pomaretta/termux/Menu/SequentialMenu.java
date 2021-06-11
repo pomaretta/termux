@@ -11,9 +11,9 @@
     
 */
 
-package java.com.pomaretta.termux.Menu;
+package com.pomaretta.termux.Menu;
 
-import java.com.pomaretta.termux.Error.ErrorLog;
+import com.pomaretta.termux.Error.ErrorLog;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
