@@ -1,9 +1,7 @@
-package java.com.pomaretta.termux.Menu;
-
 /*
 
-    Project     Programming21
-    Package     Application.Services.main.java.com.pomaretta.Components
+    Project     Termux UX
+    Package     java.com.pomaretta.termux.Menu
     
     Version     1.0      
     Author      Carlos Pomares
@@ -13,10 +11,15 @@ package java.com.pomaretta.termux.Menu;
     
 */
 
+package java.com.pomaretta.termux.Menu;
+
 /**
  * @author Carlos Pomares
  */
 
 public interface Menu {
-    public void show();
+    /**
+     * Is the main method that will show up the menu itself.
+     */
+    void show();
 }

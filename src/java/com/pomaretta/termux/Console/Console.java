@@ -22,5 +22,5 @@ public interface Console {
      * This method will call the main method and will be called by
      * the main class.
      */
-    public void start();
+    void start();
 }
