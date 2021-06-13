@@ -1,8 +1,17 @@
 # OS
 .DS_Store
 
+# VSCode
+.vscode
+
 # IntelliJ
 out
 .idea
 manifest
 termux.iml
+
+# Maven
+target
+.classpath
+.settings
+.project
