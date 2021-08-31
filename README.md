@@ -30,29 +30,34 @@
 <br/>
 <br/>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+## About
 
-To be done...
+Termux is a library to build user interface in the terminal, this project was build for an Application to deliver as college project, where I need a common workflow to build terminal interfaces without need to remake all the visual systems, then I created termux, a simple and powerfull way to create stunning interfaces in a terminal.
 
-### Built With
+## **Getting Started**
 
-* [Java 1.8]()
+Add to your project as a dependency.
 
-<!-- GETTING STARTED -->
-## Getting Started
+1. Add **JitPack** to your repositories in maven file.
 
-To get a local copy up and running follow these simple steps.
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
 
-### Prerequisites
+2. Add the dependency to your dependencies.
 
-Download the build of the current library from releases.
-
-**Or**
-
-Download the source code.
-
-<!-- CONTRIBUTING -->
+```xml
+<dependency>
+  <groupId>com.github.pomaretta</groupId>
+  <artifactId>termux</artifactId>
+  <version>0.3.1</version>
+</dependency>
+```
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -68,9 +73,6 @@ Contributions are what make the open source community such an amazing place to b
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
-<!-- CONTACT -->
 ## Contact
 
 Carlos Pomares - [@pomaretta](https://twitter.com/pomaretta)
