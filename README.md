@@ -9,7 +9,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/pomaretta/termux">
     <img src="readme/logo.png" alt="Logo" width="150" height="150">
   </a>
 
@@ -58,6 +58,17 @@ Add to your project as a dependency.
   <version>0.3.1</version>
 </dependency>
 ```
+
+## Screenshots (Basic usage)
+
+- Start screen showing up the option menu and a interactive selection menu.
+
+![](readme/start-menu.png)
+
+- Submenu, that the user can go back.
+
+![](readme/submenu.png)
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
