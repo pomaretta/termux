@@ -11,7 +11,7 @@
     
 */
 
-package com.pomaretta.termux.Command;
+package com.github.pomaretta.termux.Command;
 
 /**
  * @author Carlos Pomares

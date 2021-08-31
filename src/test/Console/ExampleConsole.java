@@ -1,10 +1,10 @@
 package Console;
 
 import Console.Parser.ExampleParser;
-import com.pomaretta.termux.Console.DefaultConsole;
-import com.pomaretta.termux.Menu.DefaultInteractiveMenu;
-import com.pomaretta.termux.Menu.OptionMenu;
-import com.pomaretta.termux.Menu.OptionsMenu;
+import com.github.pomaretta.termux.Console.DefaultConsole;
+import com.github.pomaretta.termux.Menu.DefaultInteractiveMenu;
+import com.github.pomaretta.termux.Menu.OptionMenu;
+import com.github.pomaretta.termux.Menu.OptionsMenu;
 
 public class ExampleConsole extends DefaultConsole {
 

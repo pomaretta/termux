@@ -11,7 +11,7 @@
     
 */
 
-package com.pomaretta.termux.Error;
+package com.github.pomaretta.termux.Error;
 
 import java.util.ArrayList;
 

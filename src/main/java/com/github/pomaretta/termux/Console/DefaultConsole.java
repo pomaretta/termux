@@ -11,11 +11,12 @@
     
 */
 
-package com.pomaretta.termux.Console;
+package com.github.pomaretta.termux.Console;
 
-import com.pomaretta.termux.Error.ErrorLog;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+
+import com.github.pomaretta.termux.Error.ErrorLog;
 
 /**
  * @author Carlos Pomares

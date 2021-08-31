@@ -11,11 +11,12 @@
     
 */
 
-package com.pomaretta.termux.Menu;
+package com.github.pomaretta.termux.Menu;
 
-import com.pomaretta.termux.Error.ErrorLog;
 import java.io.BufferedReader;
 import java.util.ArrayList;
+
+import com.github.pomaretta.termux.Error.ErrorLog;
 
 /**
  * @author Carlos Pomares

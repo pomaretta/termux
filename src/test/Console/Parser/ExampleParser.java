@@ -1,6 +1,6 @@
 package Console.Parser;
 
-import com.pomaretta.termux.Command.DefaultCommandParser;
+import com.github.pomaretta.termux.Command.DefaultCommandParser;
 
 public abstract class ExampleParser extends DefaultCommandParser {
 

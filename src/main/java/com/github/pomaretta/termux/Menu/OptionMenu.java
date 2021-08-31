@@ -11,11 +11,12 @@
     
 */
 
-package com.pomaretta.termux.Menu;
+package com.github.pomaretta.termux.Menu;
 
-import com.pomaretta.termux.Util.Encapsulate;
-import com.pomaretta.termux.Util.StringGenerator;
 import java.util.ArrayList;
+
+import com.github.pomaretta.termux.Util.Encapsulate;
+import com.github.pomaretta.termux.Util.StringGenerator;
 
 /**
  * @author Carlos Pomares

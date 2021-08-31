@@ -11,7 +11,7 @@
     
 */
 
-package com.pomaretta.termux.Menu;
+package com.github.pomaretta.termux.Menu;
 
 import java.io.BufferedReader;
 import java.io.IOException;

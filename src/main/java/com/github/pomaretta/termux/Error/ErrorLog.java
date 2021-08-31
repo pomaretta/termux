@@ -9,9 +9,9 @@
 
 */
 
-package com.pomaretta.termux.Error;
+package com.github.pomaretta.termux.Error;
 
-import com.pomaretta.termux.Menu.OptionMenu;
+import com.github.pomaretta.termux.Menu.OptionMenu;
 
 /**
  * @author Carlos Pomares
