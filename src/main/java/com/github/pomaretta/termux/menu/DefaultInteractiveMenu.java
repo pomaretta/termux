@@ -57,7 +57,10 @@ public abstract class DefaultInteractiveMenu implements Menu {
             loopBlock();
             try {
                 System.out.print(prompt);
-                if (DefaultCommandParser.parseCommand(reader.readLine(), parser) == -1) {
+                String line = reader.readLine();
+                if (line == null) {
+                    exit = true;
+                } else if (DefaultCommandParser.parseCommand(line, parser) == -1) {
                     exit = true;
                 }
             } catch (Exception e) {

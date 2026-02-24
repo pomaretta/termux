@@ -136,4 +136,19 @@ class SelectionMenuTest {
                 protected void showItem(Object item, boolean selected) {}
             });
     }
+
+    @Test
+    void emptyItemsThrowsIllegalArgument() {
+        assertThrows(IllegalArgumentException.class, () -> createMenu(0));
+    }
+
+    @Test
+    void zeroItemsPerPageThrowsIllegalArgument() {
+        assertThrows(IllegalArgumentException.class, () -> createMenu(5, 0));
+    }
+
+    @Test
+    void negativeItemsPerPageThrowsIllegalArgument() {
+        assertThrows(IllegalArgumentException.class, () -> createMenu(5, -1));
+    }
 }

@@ -9,6 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.regex.PatternSyntaxException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -77,5 +78,39 @@ class QuestionTest {
         BufferedReader reader = readerOf("bad\n");
         assertThrows(RuntimeException.class,
             () -> Question.askWithValidation("Q?", "", "^good$", reader));
+    }
+
+    @Test
+    void askReturnsNullOnEOF() throws Exception {
+        BufferedReader reader = readerOf("");
+        String result = Question.ask("Q?", "", reader);
+        assertNull(result);
+    }
+
+    @Test
+    void askWithValidationThrowsNPEOnEOF() {
+        BufferedReader reader = readerOf("");
+        assertThrows(NullPointerException.class,
+            () -> Question.askWithValidation("Q?", "", ".*", reader));
+    }
+
+    @Test
+    void invalidRegexThrowsPatternSyntaxException() {
+        BufferedReader reader = readerOf("input\n");
+        assertThrows(PatternSyntaxException.class,
+            () -> Question.askWithValidation("Q?", "", "[invalid", reader));
+    }
+
+    @Test
+    void askWithPercentInIndentDoesNotThrow() throws Exception {
+        BufferedReader reader = readerOf("answer\n");
+        assertDoesNotThrow(() -> Question.ask("Q?", "%percent", reader));
+    }
+
+    @Test
+    void matchesRequiresFullStringMatch() {
+        BufferedReader reader = readerOf("abc42\n");
+        assertThrows(ValidationException.class,
+            () -> Question.askWithValidation("Q?", "", "\\d+", reader));
     }
 }

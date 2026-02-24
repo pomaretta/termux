@@ -71,4 +71,22 @@ class InlineMenuTest {
         menu.show();
         assertTrue(outputStream.toString().contains("X"));
     }
+
+    @Test
+    void showWithNonEmptyIndent() {
+        String[] options = {"A", "B"};
+        InlineMenu menu = new InlineMenu(options, "\t", 1);
+        menu.show();
+        String output = outputStream.toString();
+        assertTrue(output.contains("\t"));
+    }
+
+    @Test
+    void singleItemMenu() {
+        String[] options = {"Only"};
+        InlineMenu menu = new InlineMenu(options, "", 1);
+        menu.show();
+        String output = outputStream.toString();
+        assertTrue(output.contains("1 Only"));
+    }
 }

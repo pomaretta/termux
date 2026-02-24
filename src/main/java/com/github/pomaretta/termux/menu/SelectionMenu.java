@@ -77,11 +77,22 @@ public abstract class SelectionMenu extends DefaultMenu {
      * @param maxItemsPerPage maximum items displayed per page
      * @param boxLength width of the header/footer bars in characters
      * @throws NullPointerException if items is null
+     * @throws IllegalArgumentException if items is empty, maxItemsPerPage &lt;= 0,
+     *         or boxLength &lt;= 0
      */
     public SelectionMenu(String indent, ArrayList<Object> items, String header,
                          int maxItemsPerPage, int boxLength) {
         super(indent);
         Objects.requireNonNull(items, "items must not be null");
+        if (items.isEmpty()) {
+            throw new IllegalArgumentException("items must not be empty");
+        }
+        if (maxItemsPerPage <= 0) {
+            throw new IllegalArgumentException("maxItemsPerPage must be > 0, got: " + maxItemsPerPage);
+        }
+        if (boxLength <= 0) {
+            throw new IllegalArgumentException("boxLength must be > 0, got: " + boxLength);
+        }
         this.items = items;
         this.header = header;
         this.maxItemsPerPage = maxItemsPerPage;

@@ -57,4 +57,31 @@ class EncapsulateTest {
         assertTrue(output.contains("\t"));
         assertTrue(output.contains("Test"));
     }
+
+    @Test
+    void encapsulateStringWithCustomBorderChar() {
+        Encapsulate.encapsulateString("Hi", "", "=");
+        String output = outputStream.toString();
+        assertTrue(output.contains("="));
+        assertTrue(output.contains("|Hi|"));
+    }
+
+    @Test
+    void inlineEncapsulateWithOddSpacing() {
+        String result = Encapsulate.inlineEncapsulate("X", 20, 3);
+        assertEquals(20, result.length());
+        assertTrue(result.contains("X"));
+    }
+
+    @Test
+    void inlineEncapsulateWithTextLongerThanTotal() {
+        assertThrows(IllegalArgumentException.class,
+            () -> Encapsulate.inlineEncapsulate("very long text here", 5, 2));
+    }
+
+    @Test
+    void inlineEncapsulateWithZeroTotalLengthThrows() {
+        assertThrows(IllegalArgumentException.class,
+            () -> Encapsulate.inlineEncapsulate("A", 0, 0));
+    }
 }

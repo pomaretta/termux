@@ -95,4 +95,26 @@ class OptionMenuTest {
         assertThrows(NullPointerException.class,
             () -> new OptionMenu(new String[]{"A"}, null, "Menu", "%s"));
     }
+
+    @Test
+    void emptyOptionsArrayShowsOnlyTitle() {
+        OptionMenu menu = new OptionMenu(new String[]{}, "", "Title", "%s");
+        menu.show();
+        String output = outputStream.toString();
+        assertTrue(output.contains("Title"));
+    }
+
+    @Test
+    void indentWithPercentDoesNotThrow() {
+        String[] options = {"A", "B"};
+        OptionMenu menu = new OptionMenu(options, "100%", "Menu", "%s", 1, true);
+        assertDoesNotThrow(() -> menu.show());
+    }
+
+    @Test
+    void titleLongerThanTitleLengthThrowsIllegalArgument() {
+        assertThrows(IllegalArgumentException.class,
+            () -> new OptionMenu(new String[]{"A"}, "", "Very Long Title Here", "%s",
+                0, false, 10, 2));
+    }
 }

@@ -80,4 +80,27 @@ class SequentialMenuTest {
         assertThrows(IllegalArgumentException.class,
             () -> new SequentialMenu(questions, reader, "", errorLog, validation));
     }
+
+    @Test
+    void ioExceptionSkipsQuestionAndLogsError() {
+        String[] questions = {"Q1?", "Q2?"};
+        BufferedReader failingReader = new BufferedReader(new InputStreamReader(
+                new ByteArrayInputStream("".getBytes()))) {
+            private int callCount = 0;
+
+            @Override
+            public String readLine() throws java.io.IOException {
+                if (callCount++ == 0) {
+                    throw new java.io.IOException("read failure");
+                }
+                return "answer";
+            }
+        };
+
+        SequentialMenu menu = new SequentialMenu(questions, failingReader, "", errorLog);
+        menu.show();
+
+        assertEquals(2, menu.getOutput().size());
+        assertTrue(errorLog.size() >= 1);
+    }
 }

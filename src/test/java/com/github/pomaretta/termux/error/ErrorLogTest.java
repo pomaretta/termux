@@ -44,4 +44,23 @@ class ErrorLogTest {
         String output = outputStream.toString();
         assertTrue(output.contains("\t"));
     }
+
+    @Test
+    void showWithNoErrorsProducesOutput() {
+        assertDoesNotThrow(() -> errorLog.show("", "Empty"));
+        String output = outputStream.toString();
+        assertTrue(output.contains("Empty"));
+    }
+
+    @Test
+    void showWithMultipleErrorsDisplaysAll() {
+        errorLog.add("Error A");
+        errorLog.add("Error B");
+        errorLog.add("Error C");
+        errorLog.show("", "Errors");
+        String output = outputStream.toString();
+        assertTrue(output.contains("Error A"));
+        assertTrue(output.contains("Error B"));
+        assertTrue(output.contains("Error C"));
+    }
 }

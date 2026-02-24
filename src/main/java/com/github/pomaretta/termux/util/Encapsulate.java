@@ -51,6 +51,11 @@ public class Encapsulate {
      * @return the centered text bar
      */
     public static String inlineEncapsulate(String text, int totalLength, int spacing) {
+        if (totalLength < text.length() + spacing) {
+            throw new IllegalArgumentException(
+                "totalLength (" + totalLength + ") must be >= text.length() + spacing ("
+                + (text.length() + spacing) + ")");
+        }
         int leftSpacing = (int) Math.ceil((double) spacing / 2);
         int rightSpacing = (int) Math.floor((double) spacing / 2);
         int remaining = totalLength - text.length() - spacing;

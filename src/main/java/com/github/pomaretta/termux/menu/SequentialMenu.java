@@ -33,7 +33,6 @@ public class SequentialMenu implements Menu {
     private final String indent;
     private final boolean validationActive;
     private final ErrorLog errorLog;
-    private int step;
 
     /**
      * Creates a sequential menu without validation.
@@ -99,18 +98,18 @@ public class SequentialMenu implements Menu {
 
     private void loop() {
         while (output.size() < questions.length) {
+            int currentIndex = output.size();
             try {
                 if (validationActive) {
-                    output.add(Question.askWithValidation(questions[step], indent, validation[step], reader));
+                    output.add(Question.askWithValidation(questions[currentIndex], indent, validation[currentIndex], reader));
                 } else {
-                    output.add(Question.ask(questions[step], indent, reader));
+                    output.add(Question.ask(questions[currentIndex], indent, reader));
                 }
-                step++;
             } catch (ValidationException validationException) {
                 errorLog.add(validationException.getMessage());
             } catch (IOException ioException) {
                 errorLog.add(ioException.getMessage());
-                step++;
+                output.add(""); // Skip question with empty answer due to IOException
             }
         }
     }

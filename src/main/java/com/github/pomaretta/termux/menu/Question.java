@@ -46,8 +46,8 @@ public class Question {
      * @throws IOException if reading input fails
      */
     public static String ask(String message, String indent, String prompt, BufferedReader reader) throws IOException {
-        System.out.printf("\n" + indent + "%s", message);
-        System.out.printf("\n" + indent + "%s", prompt);
+        System.out.printf("\n%s%s", indent, message);
+        System.out.printf("\n%s%s", indent, prompt);
         return reader.readLine();
     }
 
@@ -84,13 +84,13 @@ public class Question {
 
         Pattern pattern = Pattern.compile(validation);
 
-        System.out.printf("\n" + indent + "%s", message);
-        System.out.printf("\n" + indent + "%s", prompt);
+        System.out.printf("\n%s%s", indent, message);
+        System.out.printf("\n%s%s", indent, prompt);
 
         String answer = reader.readLine();
         Matcher matcher = pattern.matcher(answer);
 
-        if (!matcher.find()) {
+        if (!matcher.matches()) {
             throw new ValidationException("Validation failed, doesn't match with: " + validation);
         }
 

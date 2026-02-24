@@ -77,6 +77,11 @@ public class OptionMenu extends AbstractOptionsMenu {
     public OptionMenu(String[] options, String indent, String title, String format,
                       int startNumber, boolean showNumbers, int titleLength, int spacing) {
         super(options, indent);
+        if (titleLength < title.length() + spacing) {
+            throw new IllegalArgumentException(
+                "titleLength (" + titleLength + ") must be >= title.length() + spacing ("
+                + (title.length() + spacing) + ")");
+        }
         this.title = title;
         this.format = format;
         this.number = startNumber;
@@ -124,9 +129,9 @@ public class OptionMenu extends AbstractOptionsMenu {
         int n = number;
         for (String option : options) {
             if (activateNumbers) {
-                System.out.printf("\n" + indent + "%-5d " + format, n, option);
+                System.out.printf("\n%s%-5d " + format, indent, n, option);
             } else {
-                System.out.printf("\n" + indent + format, option);
+                System.out.printf("\n%s" + format, indent, option);
             }
             n++;
         }
@@ -134,8 +139,8 @@ public class OptionMenu extends AbstractOptionsMenu {
 
     @Override
     protected void update() {
-        System.out.printf("\n" + indent + "%s", generateTitle());
+        System.out.printf("\n%s%s", indent, generateTitle());
         showOptions();
-        System.out.printf("\n" + indent + "%s\n", generateBottom());
+        System.out.printf("\n%s%s\n", indent, generateBottom());
     }
 }
