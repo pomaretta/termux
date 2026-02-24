@@ -6,7 +6,7 @@
 
   <groupId>com.github.pomaretta</groupId>
   <artifactId>termux</artifactId>
-  <version>0.3.1</version>
+  <version>1.0.0</version>
 
   <name>Termux UX</name>
   <url>https://www.github.com/pomaretta/termux</url>
@@ -23,5 +23,27 @@
       <url>https://jitpack.io</url>
     </repository>
   </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <forkCount>0</forkCount>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

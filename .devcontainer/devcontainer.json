@@ -1,0 +1,21 @@
+{
+  "name": "Termux",
+  "image": "mcr.microsoft.com/devcontainers/java:21-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "installMaven": true,
+      "mavenVersion": "3.9.9",
+      "installGradle": false
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.vscode-xml"
+      ]
+    }
+  },
+  "postCreateCommand": "mvn dependency:resolve && mvn compile",
+  "remoteUser": "vscode"
+}
